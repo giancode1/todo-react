@@ -5,12 +5,12 @@ export const TodosList = ({todos, setTodos, setEditTodo}) => {
     const elementCompleted = (todo) => (<span style={{fontSize: "23px" , color: "LimeGreen"}}>
                                 <i  onClick={()=>handleCompleted(todo)}
                                     type="button" 
-                                    className="fas fa-check"></i>  
+                                    className="fas fa-check fa-fw"></i>  
                             </span>)
 
     const elementPending = (todo) => (<span style={{fontSize: "23px" , color: "red"}}>
                                 <i  onClick={()=>handleCompleted(todo)}
-                                    type="button" className="fas fa-times"></i>  
+                                    type="button" className="fas fa-times fa-fw"></i>  
                             </span>)
 
     const handleDeleteTodo = ({id}) => {
@@ -51,18 +51,18 @@ export const TodosList = ({todos, setTodos, setEditTodo}) => {
                         <tr key={todo.id}>
                             <th scope="row">{index+1}</th>
                             <td className={todo.completed ? 'text-decoration-line-through' : ''}>{todo.task}</td>
-                            <td>{todo.completed ? 'Completado' : 'Pendiente'}</td>
+                            <td>{todo.completed ? 'Completado' : 'Pendiente '}</td>
                             <td> 
-                                {todo.completed ? elementCompleted(todo): elementPending(todo)} &nbsp;
+                                {todo.completed ? elementCompleted(todo): elementPending(todo)} 
 
                                 <span style={{fontSize: "20px" , color: "SteelBlue"}}>
-                                    <i  type="button" className="fas fa-pen"
+                                    <i  type="button" className="fas fa-pen fa-fw"
                                         onClick={()=>handleEditTodo(todo)} >
                                     </i> 
-                                </span> &nbsp;
+                                </span> 
 
                                 <span style={{fontSize: "20px" , color: "DimGray"}}>
-                                    <i  type ="button" className="fas fa-trash" //si dejara solo: handleDeleteTodo(todo)  //se dispara a cada rato
+                                    <i  type ="button" className="fas fa-trash fa-fw" //si dejara solo: handleDeleteTodo(todo)  //se dispara a cada rato
                                         onClick={()=>handleDeleteTodo(todo)}> 
                                     </i> 
 
