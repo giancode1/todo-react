@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import {Form} from './components/Form'
 import {TodosList} from './components/TodosList'
 import './App.css';
+import { TodosCount } from './components/TodosCount';
 
 function TodoApp() {
   const [input, setInput] = useState('')
@@ -30,6 +31,8 @@ function TodoApp() {
             editTodo={editTodo}
             setEditTodo={setEditTodo}
           />
+          
+          <TodosCount todos={todos} />
 
           <TodosList 
             todos={todos}
@@ -37,11 +40,9 @@ function TodoApp() {
             setEditTodo={setEditTodo}
           />
 
+        
         </div>
-
-
       </div>
-
     </main>
   );
 }
