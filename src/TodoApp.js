@@ -4,6 +4,7 @@ import {Form} from './components/Form'
 import {TodosList} from './components/TodosList'
 import './App.css';
 import { TodosCount } from './components/TodosCount';
+import { Footer } from './components/Footer';
 
 function TodoApp() {
   const [input, setInput] = useState('')
@@ -39,7 +40,7 @@ function TodoApp() {
             setTodos={setTodos}
             setEditTodo={setEditTodo}
           />
-
+          <Footer />
         
         </div>
       </div>
