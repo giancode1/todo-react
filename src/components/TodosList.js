@@ -33,7 +33,7 @@ export const TodosList = ({todos, setTodos, setEditTodo}) => {
     }
 
   return (
-    <div className="card col-12 col-md-7 mx-auto">
+    <div className="card col-12 col-lg-7 mx-auto">
 
       <div className="table-responsive">
         <table className="table align-middle table-hover">

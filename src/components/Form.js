@@ -39,7 +39,7 @@ export const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) 
       }, [setInput, editTodo])
 
     return (
-        <form onSubmit={handleSubmit} className="col-12 col-md-7 mx-auto">
+        <form onSubmit={handleSubmit} className="col-12 col-lg-7 mx-auto">
           <div className="input-group mb-3">
             <input 
                 className="form-control" 
