@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid'
 
 export const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) => {
     
@@ -12,8 +12,8 @@ export const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) 
     }
 
     const handleInputChange = (e) => {
-        setInput(e.target.value);
-      };
+        setInput(e.target.value)
+    }
     
       const handleSubmit = (e) => {
         e.preventDefault()
