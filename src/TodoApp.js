@@ -5,17 +5,20 @@ import {TodosList} from './components/TodosList'
 import './App.css';
 import { TodosCount } from './components/TodosCount';
 import { Footer } from './components/Footer';
+import useLocalStorage  from './hooks/useLocalStorage';
 
 function TodoApp() {
-  const [input, setInput] = useState('')
-  const [todos, setTodos] = useState([
+  //const [storedValue, setValue]  = useLocalStorage("todos", todosExamples)
+
+  const [todos, setTodos] = useLocalStorage("todos", [
     { id:uuid(), task:'Lavar la ropa', completed: false},
     { id:uuid(), task:'Leer un libro', completed: true},
     { id:uuid(), task:'Cocinar pollo asado', completed: false},
-    
   ])
-  const [editTodo, setEditTodo] = useState(null)
+  
+  const [input, setInput] = useState('')
 
+  const [editTodo, setEditTodo] = useState(null)
 
   return (
     <main className="App">

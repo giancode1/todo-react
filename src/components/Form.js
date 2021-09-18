@@ -12,8 +12,8 @@ export const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) 
     }
 
     const handleInputChange = (e) => {
-        setInput(e.target.value);
-      };
+        setInput(e.target.value)
+    }
     
       const handleSubmit = (e) => {
         e.preventDefault()
