@@ -1,6 +1,8 @@
 import React from 'react'
 
-export const TodosCount = ({todos}) => {
+export const TodosCount = React.memo(({todos}) => {
+    
+    //console.log('TodosCount me renderizo')
 
     const totalTodos = todos.length
     const completedTodos = todos.filter(todo => todo.completed).length
@@ -14,4 +16,4 @@ export const TodosCount = ({todos}) => {
             Pendientes: <span className="badge bg-danger">{pendingTodos}</span> &nbsp;
         </p>
     )
-}
+})

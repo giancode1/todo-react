@@ -1,6 +1,7 @@
 import React from "react";
 
-export const TodosList = ({todos, setTodos, setEditTodo}) => {
+export const TodosList = React.memo(({todos, setTodos, setEditTodo}) => {
+    //console.log('TodosList me renderizo')
 
     const elementCompleted = (todo) => (<span style={{fontSize: "23px" , color: "LimeGreen"}}>
                                 <i  onClick={()=>handleCompleted(todo)}
@@ -16,6 +17,7 @@ export const TodosList = ({todos, setTodos, setEditTodo}) => {
     const handleDeleteTodo = ({id}) => {
         setTodos(todos.filter(todo => todo.id !==id ))
     }
+
     const handleEditTodo = ({id}) => {
         const findTodo = todos.find(todo => todo.id === id)
         setEditTodo(findTodo)
@@ -76,10 +78,6 @@ export const TodosList = ({todos, setTodos, setEditTodo}) => {
 
       </div>
 
-
-
-
     </div>
-
-  );
-};
+  )
+})

@@ -1,7 +1,9 @@
 import React,{useEffect} from 'react'
 import { v4 as uuid } from 'uuid'
 
-export const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) => {
+export const Form = React.memo(({input, setInput, todos, setTodos, editTodo, setEditTodo}) => {
+
+    //console.log('Form me renderizo')
     
     const updateTodo = (id, task, completed) => {
       const todosUpdated = todos.map( todo => 
@@ -53,4 +55,4 @@ export const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) 
           </div>
         </form>
     )
-}
+})
