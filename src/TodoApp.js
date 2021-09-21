@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid';
 import {Form} from './components/Form'
 import {TodosList} from './components/TodosList'
-import { TodosCount } from './components/TodosCount';
-import { Footer } from './components/Footer';
-import useLocalStorage  from './hooks/useLocalStorage';
-import './App.css';
+import { TodosCount } from './components/TodosCount'
+import { Footer } from './components/Footer'
+import useLocalStorage  from './hooks/useLocalStorage'
+import './App.css'
 
 function TodoApp() {
 
