@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../context/TodoContext'
 
-export const TodosCount = React.memo(({todos}) => {
+export const TodosCount = React.memo( () => {
     
     //console.log('TodosCount me renderizo')
+
+    const {todos} = useContext(TodoContext)
 
     const totalTodos = todos.length
     const completedTodos = todos.filter(todo => todo.completed).length

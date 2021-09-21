@@ -1,9 +1,11 @@
-import React,{useEffect} from 'react'
+import React,{useContext, useEffect} from 'react'
 import { v4 as uuid } from 'uuid'
+import { TodoContext } from '../context/TodoContext'
 
-export const Form = React.memo(({input, setInput, todos, setTodos, editTodo, setEditTodo}) => {
+export const Form = React.memo(() => {
 
     //console.log('Form me renderizo')
+    const {input, setInput, todos, setTodos, editTodo, setEditTodo} = useContext(TodoContext)
     
     const updateTodo = (id, task, completed) => {
       const todosUpdated = todos.map( todo => 

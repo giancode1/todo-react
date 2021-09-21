@@ -6,13 +6,14 @@ import { TodosCount } from './components/TodosCount'
 import { Footer } from './components/Footer'
 import useLocalStorage  from './hooks/useLocalStorage'
 import './App.css'
+import { TodoContext } from './context/TodoContext';
 
 function TodoApp() {
 
   const [todos, setTodos] = useLocalStorage("todos", [
     { id:uuid(), task:'Lavar la ropa', completed: false},
     { id:uuid(), task:'Leer un libro', completed: true},
-    { id:uuid(), task:'Cocinar pollo asado', completed: false},
+    { id:uuid(), task:'Cocinar pollo con verduras', completed: false},
   ])
   
   const [input, setInput] = useState('')
@@ -20,34 +21,24 @@ function TodoApp() {
   const [editTodo, setEditTodo] = useState(null)
 
   return (
-    <main className="App">
 
-      <div className="container">
-        <h1 className="mb-3 mt-2">ToDo App</h1>
+    <TodoContext.Provider value={{ todos, setTodos, input, setInput, editTodo, setEditTodo }}>
+       <main className="App">
+        <div className="container">
+          <h1 className="mb-3 mt-2">ToDo App</h1>
 
-        <div className="row">
-          <Form 
-            input={input} 
-            setInput={setInput}
-            todos={todos}
-            setTodos={setTodos}
-            editTodo={editTodo}
-            setEditTodo={setEditTodo}
-          />
-          
-          <TodosCount todos={todos} />
+          <div className="row">
+            <Form />
+            <TodosCount />
+            <TodosList  />
+            <Footer />
+          </div>
 
-          <TodosList 
-            todos={todos}
-            setTodos={setTodos}
-            setEditTodo={setEditTodo}
-          />
-          <Footer />
-        
         </div>
-      </div>
-    </main>
-  );
+      </main>
+    </TodoContext.Provider>
+
+  )
 }
 
 export default TodoApp;

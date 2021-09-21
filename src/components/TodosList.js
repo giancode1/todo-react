@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../context/TodoContext";
 import { TodoListItem } from "./TodoListItem";
 
-export const TodosList = React.memo(({todos, setTodos, setEditTodo}) => {
+export const TodosList = React.memo(() => {
     //console.log('TodosList me renderizo')
+    const {todos} = useContext(TodoContext)
 
   return (
     <div className="card col-12 col-lg-7 mx-auto">
@@ -24,9 +26,6 @@ export const TodosList = React.memo(({todos, setTodos, setEditTodo}) => {
                         key={todo.id}
                         index={index}
                         todo={todo}
-                        todos={todos}
-                        setTodos={setTodos}
-                        setEditTodo={setEditTodo}
                     />
                 ))
             }

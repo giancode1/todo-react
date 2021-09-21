@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../context/TodoContext'
 
-export const TodoListItem = React.memo(({todo, index, todos, setTodos, setEditTodo}) => {
+export const TodoListItem = React.memo( ( {todo, index} ) => {
     //console.log('TodosListItem me renderizo')
+    const {todos,setTodos,setEditTodo} = useContext(TodoContext)
 
     const elementCompleted = (todo) => (<span style={{fontSize: "23px" , color: "LimeGreen"}}>
                                         <i  onClick={ () => handleCompleted(todo) }
